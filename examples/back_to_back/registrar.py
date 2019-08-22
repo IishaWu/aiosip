@@ -126,7 +126,7 @@ def main():
     args = parser.parse_args()
 
     loop = asyncio.get_event_loop()
-    app = aiosip.Application(loop=loop)
+    app = aiosip.Application(loop=loop,mdialplan=Dialplan())
 
     if args.protocol == 'udp':
         start(app, aiosip.UDP)
